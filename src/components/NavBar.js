@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../images/images-removebg-preview.png'
 import "../styles/NavBar.css"
+import {Link} from "react-router-dom"
 const NavBar = () => {
   return (
     <>
@@ -15,10 +16,10 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item me-5">
-                <a className="nav-link active text-light" aria-current="page" href="#">Home</a>
+                <Link className="nav-link active text-light" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item me-5">
-                <a className="nav-link text-light" href="#">Features</a>
+                <a className="nav-link text-light" href="#">About</a>
               </li>
               <li className="nav-item me-5">
                 <a className="nav-link text-light" href="#">Contact us</a>
@@ -35,7 +36,7 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <div className='me-3'>
+          <div className='me-3 nav-item'>
           <div className='me-5 pe-5'>
           <div className='button me-5'>
             Get Visc

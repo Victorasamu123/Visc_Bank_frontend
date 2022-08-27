@@ -1,6 +1,7 @@
 import React from 'react'
 import "../styles/Home.css"
 import img from "../images/image-removebg-preview.png"
+import {Link} from "react-router-dom"
 const Home = () => {
   return (
     <>
@@ -15,12 +16,12 @@ const Home = () => {
           money,no strings attached. <br />
           Welcome to your freedom
         </div>
-        <button className='btn mt-3'>
+        <Link to="/signup" className='btn mt-3'>
           Sign up
-        </button>
-        <button className='btn ms-3 mt-3'>
+        </Link>
+        <Link to="/signin" className='btn ms-3 mt-3'>
           Sign in
-        </button>
+        </Link>
         <div>
           <img src={img} alt="" width={750} className="img-div" />
         </div>

@@ -25,10 +25,27 @@ const Home = () => {
           <img src={img} alt="" width={750} className="img-div" />
         </div>
       </div>
-      <div className='sec'>
+      <div className='big-boy'>
+      <div className='second-div'>
         <h1>
           Why choose Visc bank?
         </h1>
+        <div className='mini-text'>
+        We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before
+        </div>
+        <div className='row mt-5'>
+          <div className='col-3 shadow-sm card'>
+            <h5 className='text-center card-header'>Bank of the free</h5>
+            <div className='card-body'>
+             <p className='card-text'>
+             We’re serious about free banking, <br />
+             and we will never, ever charge you <br /> 
+             for anything without your consent.
+             </p>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </>
   )

@@ -1,0 +1,18 @@
+.div-text{
+    margin-left: 120px;
+    margin-top: 100px;
+    color: white !important;
+}
+.mini-text{
+    color: white !important;
+    margin-top: 20px;
+}
+.img-div{
+    position: relative !important;
+    left: 450px;
+    top: -380px;
+}
+.btn{
+    background-color: rgb(21,87,254) !important;
+    color: white !important;
+}

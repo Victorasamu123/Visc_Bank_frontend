@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../images/images-removebg-preview.png'
 import "../styles/NavBar.css"
 import {Link} from "react-router-dom"
+const endpoint="http://localhost:3500/users/signup"
 const NavBar = () => {
   return (
     <>

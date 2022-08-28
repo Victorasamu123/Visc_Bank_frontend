@@ -28,7 +28,7 @@ return(
       <section className='bg-light'>
         <center>
           {
-            message!=""?<div className='alert alert-danger w-25'>{message}</div>:<div></div>
+            message!==""?<div className='alert alert-danger w-25'>{message}</div>:<div></div>
           }
           
         </center>

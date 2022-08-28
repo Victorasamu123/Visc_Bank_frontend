@@ -10,17 +10,28 @@ const Signup = () => {
   const [password, setpassword] = useState("");
   const [accountnumber, setaccountnumber] = useState(Math.floor(Math.random()*100000000000));
   const [initialbalance, setinitialbalance] = useState("15000");
-
+  const [message, setmessage] = useState("")
+  const endpoint="http://localhost:3500/users/signup"
   const signup=()=>{
     setaccountnumber(Math.floor(2+Math.random()*10000000000))
     setinitialbalance(15000);
     let userDetails={firstname,lastname,Phonenumber,email,password,accountnumber,initialbalance}
-    console.log(userDetails)
-    alert("hello express");
+    axios.post(endpoint,userDetails).then((result)=>{
+      console.log(result.data.message);
+      setmessage(result.data.message)
+    }).catch((err)=>{
+      console.log(err);
+    })
   }
 return(
     <>
       <section className='bg-light'>
+        <center>
+          {
+            message!=""?<div className='alert alert-danger w-25'>{message}</div>:<div></div>
+          }
+          
+        </center>
        <h3 className='pt-5'>Signup</h3>
        <center>
         <div className='div-input'>

@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import DashBoard from './components/DashBoard';
-
+import Deposits from './components/Deposits';
 function App() {
   return (
     <>
@@ -16,6 +16,7 @@ function App() {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/dashboard" element={<DashBoard/>}/>
+      <Route path='/deposits' element={<Deposits/>}/>
     </Routes>
     </>
   );

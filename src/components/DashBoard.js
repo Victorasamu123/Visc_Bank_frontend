@@ -8,6 +8,7 @@ import icon3 from "../images/receipt_long_FILL0_wght200_GRAD0_opsz48.svg"
 import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
+import icon7 from "../images/search-outline.svg"
 const DashBoard = () => {
   return (
     <>
@@ -23,7 +24,15 @@ const DashBoard = () => {
             <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
           </ul>
          </div>
-         <div></div>
+         <div className='middle-body'>
+           <div className='search-div'><img src={icon7} alt=""width={20} className="ms-4"/><input type="text" className='search-input' placeholder='Search...'/></div>
+           <div className='username-div'>Asamu victor</div>
+           <div className='current-balance-div'>
+             <h6 className='current-balance-text pt-3 ms-3'>Current Balance</h6>
+             <div></div>
+             <div className='amount-text'>$11000000</div>
+           </div>
+         </div>
        </div>
     </>
   )

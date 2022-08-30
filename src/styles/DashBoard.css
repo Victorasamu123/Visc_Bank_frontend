@@ -28,3 +28,41 @@ li{
     width: fit-content;
    border-bottom: thick solid rgb(255,255,255);
 }
+.middle-body{
+    width: 82%;
+    height: 625px;
+}
+.search-div{
+    width: 280px;
+    height: 40px;
+    border: 2px solid rgb(232,231,224);
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 9px;
+}
+.search-input{
+    border: 0;
+    margin-top: 5px;
+}
+.username-div{
+    margin-left: 920px;
+    margin-top: -50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+.current-balance-div{
+    width: 300px;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 740px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right,rgb(43,43,43), rgb(59,59,59), rgb(78,78,78));
+}
+.current-balance-text{
+    color: white;
+    font-size: 18px;
+}
+.amount-text{
+    
+}

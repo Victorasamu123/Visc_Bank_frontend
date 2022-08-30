@@ -17,7 +17,7 @@ const Signup = () => {
     setinitialbalance(0);
     let userDetails={firstname,lastname,Phonenumber,email,password,accountnumber,initialbalance}
     axios.post(endpoint,userDetails).then((result)=>{
-      console.log(result.data.message);
+      console.log(result.data);
       setmessage(result.data.message)
     }).catch((err)=>{
       console.log(err);

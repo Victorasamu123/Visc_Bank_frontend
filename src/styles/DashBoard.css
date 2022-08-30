@@ -93,3 +93,11 @@ li{
     font-size: 14px;
     font-weight: 600;
 }
+.big-transsaction{
+    width: 550px;
+    height: 200px;
+    border: 2px solid rgb(232,231,224);
+    border-radius: 9px;
+    margin-top: 40px;
+    margin-left: 30px;
+}

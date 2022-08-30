@@ -64,5 +64,18 @@ li{
     font-size: 18px;
 }
 .amount-text{
-    
+    color: white;
+    font-size: 25px;
+}
+.account-number{
+    color: white;
+    font-size: 14px;
+}
+.master-card{
+    margin-left: 250px;
+    margin-top: -30px;
+}
+.basic-transactions{
+    display: flex;
+    margin-top: -200px;
 }

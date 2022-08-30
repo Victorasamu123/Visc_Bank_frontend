@@ -10,6 +10,8 @@ import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon7 from "../images/search-outline.svg"
 import icon8 from "../images/images-removebg-preview.png"
+import icon9 from "../images/download-removebg-preview.png"
+import icon10 from "../images/240_F_304833891_wkldpjBB4ByPtwmzCYaWXwopM4SSSaUE-removebg-preview.png"
 const DashBoard = () => {
   return (
     <>
@@ -35,8 +37,29 @@ const DashBoard = () => {
              <div className='account-number mt-5 pt-3 ms-3'>2494 9595 9595 9555</div>
            </div>
            <div className='basic-transactions'>
-              <div className=''>
-
+              <div className='fund-acct me-4'>
+               <center>
+               <img src={icon9} alt="" width={50}/><br />
+               <Link to="/"  className='basic-transactions-link'>Fund account</Link>
+               </center>
+              </div>
+              <div className='fund-acct me-4'>
+               <center>
+               <img src={icon10} alt="" width={80}/><br />
+               <Link to="/"  className='basic-transactions-link'>Transfer</Link>
+               </center>
+              </div>
+              <div className='fund-acct me-4'>
+               <center>
+               <img src={icon4} alt=""/><br />
+               <Link to="/"  className='basic-transactions-link'>Wallet</Link>
+               </center>
+              </div>
+              <div className='fund-acct'>
+               <center>
+               <img src={icon5} alt=""/><br />
+               <Link to="/"  className='basic-transactions-link'>Transactions</Link>
+               </center>
               </div>
            </div>
          </div>

@@ -10,7 +10,6 @@ import Deposits from './components/Deposits';
 function App() {
   return (
     <>
-    <NavBar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/signup" element={<Signup/>}/>

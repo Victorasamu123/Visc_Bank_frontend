@@ -11,7 +11,9 @@ import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.s
 import icon7 from "../images/search-outline.svg"
 import icon8 from "../images/images-removebg-preview.png"
 import icon9 from "../images/download-removebg-preview.png"
-import icon10 from "../images/240_F_304833891_wkldpjBB4ByPtwmzCYaWXwopM4SSSaUE-removebg-preview.png"
+import icon10 from "../images/download-removebg-preview (1).png"
+import icon11 from "../images/wallet-money-in-icon-vector-21023442-removebg-preview.png"
+import icon12 from "../images/download-removebg-preview (2).png"
 const DashBoard = () => {
   return (
     <>
@@ -45,22 +47,25 @@ const DashBoard = () => {
               </div>
               <div className='fund-acct me-4'>
                <center>
-               <img src={icon10} alt="" width={80}/><br />
+               <img src={icon10} alt="" width={50}/><br />
                <Link to="/"  className='basic-transactions-link'>Transfer</Link>
                </center>
               </div>
               <div className='fund-acct me-4'>
                <center>
-               <img src={icon4} alt=""/><br />
+               <img src={icon11} alt="" width={50}/><br />
                <Link to="/"  className='basic-transactions-link'>Wallet</Link>
                </center>
               </div>
               <div className='fund-acct'>
                <center>
-               <img src={icon5} alt=""/><br />
+               <img src={icon12} alt="" width={50}/><br />
                <Link to="/"  className='basic-transactions-link'>Transactions</Link>
                </center>
               </div>
+           </div>
+           <div className='big-transsaction'>
+            
            </div>
          </div>
        </div>

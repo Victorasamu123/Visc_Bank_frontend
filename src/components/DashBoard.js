@@ -30,11 +30,17 @@ const DashBoard = () => {
     let userVerrification={userIdentification}
     axios.post(endpoint22,userVerrification).then((result)=>{
       console.log(result);
+      setinitialbalance(result.data.initialbalance)
+      console.log(initialbalance)
+      setaccountnumber(result.data.accountnumber)
+      setfirstname(result.data.firstname)
+      setlastname(result.data.lastname)
+      settransferpin(result.data.transferpin)
     }).catch((err)=>{
       console.log(err)
     })
   }, [userIdentification,firstname,lastname,accountnumber,transferpin,initialbalance])
-  
+  const userInfo ={userIdentification,transferpin};
   return (
     <>
        <div className='container-div'>
@@ -51,12 +57,12 @@ const DashBoard = () => {
          </div>
          <div className='middle-body'>
            <div className='search-div'><img src={icon7} alt=""width={20} className="ms-4"/><input type="text" className='search-input' placeholder='Search...'/></div>
-           <div className='username-div'>Asamu victor</div>
+           <div className='username-div'>{lastname} {firstname}</div>
            <div className='current-balance-div'>
              <h6 className='current-balance-text pt-3 ms-3'>Current Balance</h6>
              <div className='master-card'><img src={icon8} alt="" width={35}/></div>
-             <div className='amount-text pt-2 ms-3'>$11000000</div>
-             <div className='account-number mt-5 pt-3 ms-3'>2494 9595 9595 9555</div>
+             <div className='amount-text pt-2 ms-3'>${initialbalance}</div>
+             <div className='account-number mt-5 pt-3 ms-3'>{accountnumber}</div>
            </div>
            <div className='basic-transactions'>
               <div className='fund-acct me-4'>
@@ -84,13 +90,19 @@ const DashBoard = () => {
                </center>
               </div>
            </div>
-           <div className='big-transsaction'>
+           <div className='bills-div'>
+           <div className='pay-bills-transsaction me-5'>
             
+           </div>
+           <div className='mobile-transaction'>
+            
+           </div>
            </div>
          </div>
        </div>
     </>
   )
 }
-
+ 
+// export 
 export default DashBoard

@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from "axios"
-import {Link, useLocation} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import "../styles/DashBoard.css"
 import icon1 from "../images/dashboard_customize_FILL1_wght200_GRAD0_opsz48.svg"
 import icon2 from "../images/paid_FILL0_wght200_GRAD0_opsz48.svg"
@@ -22,6 +22,7 @@ const DashBoard = () => {
   const [transferpin, settransferpin] = useState("")
   const [initialbalance, setinitialbalance] = useState("")
   const location = useLocation()
+  const navigate = useNavigate()
   const endpoint22= "http://localhost:3500/users/dashboard"
   useEffect(() => {
     console.log(location.state.user_id)
@@ -39,8 +40,7 @@ const DashBoard = () => {
     }).catch((err)=>{
       console.log(err)
     })
-  }, [userIdentification,firstname,lastname,accountnumber,transferpin,initialbalance])
-  const userInfo ={userIdentification,transferpin};
+  }, [userIdentification,firstname,lastname,accountnumber,transferpin,initialbalance]);
   return (
     <>
        <div className='container-div'>
@@ -48,7 +48,7 @@ const DashBoard = () => {
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
             <li><Link to="/dashboard" className='side-nav-link'><div className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
+            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
@@ -68,7 +68,7 @@ const DashBoard = () => {
               <div className='fund-acct me-4'>
                <center>
                <img src={icon9} alt="" width={50}/><br />
-               <Link to="/"  className='basic-transactions-link'>Fund account</Link>
+               <Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='basic-transactions-link'>Fund account</Link>
                </center>
               </div>
               <div className='fund-acct me-4'>

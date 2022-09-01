@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from "axios"
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 import "../styles/DashBoard.css"
 import icon1 from "../images/dashboard_customize_FILL1_wght200_GRAD0_opsz48.svg"
 import icon2 from "../images/paid_FILL0_wght200_GRAD0_opsz48.svg"
@@ -15,6 +15,26 @@ import icon10 from "../images/download-removebg-preview (1).png"
 import icon11 from "../images/wallet-money-in-icon-vector-21023442-removebg-preview.png"
 import icon12 from "../images/download-removebg-preview (2).png"
 const DashBoard = () => {
+  const [userIdentification, setuserIdentification] = useState("")
+  const [firstname, setfirstname] = useState("")
+  const [lastname, setlastname] = useState("")
+  const [accountnumber, setaccountnumber] = useState("")
+  const [transferpin, settransferpin] = useState("")
+  const [initialbalance, setinitialbalance] = useState("")
+  const location = useLocation()
+  const endpoint22= "http://localhost:3500/users/dashboard"
+  useEffect(() => {
+    console.log(location.state.user_id)
+    setuserIdentification(location.state.user_id)
+    console.log(userIdentification)
+    let userVerrification={userIdentification}
+    axios.post(endpoint22,userVerrification).then((result)=>{
+      console.log(result);
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [userIdentification,firstname,lastname,accountnumber,transferpin,initialbalance])
+  
   return (
     <>
        <div className='container-div'>

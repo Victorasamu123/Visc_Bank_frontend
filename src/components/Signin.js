@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import axios from "axios"
 import "../styles/Signup.css"
 const Signin = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [message, setmessage] = useState("")
+  // const [user_id, setuser_id] = useState("")
+  let navigate=useNavigate()
   const endpoint1="http://localhost:3500/users/signin"
   const signin=()=>{
-    let user={email,password};
-    axios.post(endpoint1,user).then((result)=>{
-      console.log(result.data.message);
-      setmessage(result.data.message);
-    })
-    alert("e don dey dashboard");
+    if (email==""||password=="") {
+      console.log("enter correct information")
+    } else {
+      
+      let user={email,password};
+      axios.post(endpoint1,user).then((result)=>{
+        console.log(result)
+        console.log(result.data.user_id);
+        let user_id =  result.data.user_id
+        setmessage(result.data.message);
+        console.log(user_id)
+        navigate("/dashboard",{state:{user_id:user_id}})
+      })
+    }
   }
   return (
     <>

@@ -43,6 +43,9 @@ li{
 .search-input{
     border: 0;
     margin-top: 5px;
+    outline-color: initial !important;
+    outline-style: none !important;
+    outline-width: initial !important;
 }
 .username-div{
     margin-left: 920px;

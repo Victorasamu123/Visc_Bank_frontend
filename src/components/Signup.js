@@ -8,6 +8,7 @@ const Signup = () => {
   const [Phonenumber, setPhonenumber] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [transferpin, settransferpin] = useState("");
   const [accountnumber, setaccountnumber] = useState(Math.floor(Math.random() * 100000000000));
   const [initialbalance, setinitialbalance] = useState(0);
   const [message, setmessage] = useState("")
@@ -17,13 +18,13 @@ const Signup = () => {
     setaccountnumber(2 + Math.floor(Math.random() * 10000000000))
     setinitialbalance(0);
     if (firstname == "" || lastname == "" || Phonenumber
-      == "" || email == "" || password == "") {
+      == "" || email == "" || password == "" || transferpin== "") {
       console.log("enter correct informatiion")
     } else {
-      let userDetails = { firstname, lastname, Phonenumber, email, password, accountnumber, initialbalance }
+      let userDetails = { firstname, lastname, Phonenumber, email, password,transferpin, accountnumber, initialbalance }
       axios.post(endpoint, userDetails).then((result) => {
         console.log(result.data);
-        setmessage(result.data.message)
+        setmessage(result.data.message);
       }).catch((err) => {
         console.log(err);
       })
@@ -48,6 +49,7 @@ const Signup = () => {
             <input type="number" placeholder='Phonenumber' className='input-area' onChange={(e) => setPhonenumber(e.target.value)} />
             <input type="email" placeholder='Email address' className='input-area' onChange={(e) => setemail(e.target.value)} />
             <input type="password" placeholder='Password' className='input-area' onChange={(e) => setpassword(e.target.value)} />
+            <input type="password" placeholder='Transfer pin' className='input-area' onChange={(e) => settransferpin(e.target.value)} />
             <button className='btn w-25 mt-3' onClick={signup}>signup</button>
             <p>
               Already have an account?<Link to="/signin" className='link'>sign in here</Link>

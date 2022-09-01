@@ -9,21 +9,27 @@ import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.s
 const FundAccount = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [transferpin, settransferpin] = useState("")
+    const [accountname, setaccountname] = useState("")
+    const [accountnumber, setaccountnumber] = useState("")
+    const [amount, setamount] = useState("")
+    const [transferpin2, settransferpin2] = useState("")
     const location = useLocation()
     useEffect(() => {
      setuserIdentification(location.state.userIdentification)
      settransferpin(location.state.transferpin)
      console.log(transferpin,userIdentification)
-    }, [userIdentification,transferpin])
-    
+    }, [userIdentification,transferpin]);
+    const fundit =()=>{
+        
+    }
   return (
     <>
       <div className='container-div'>
          <div className='side-navbar'>
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
-            <li><Link to="/dashboard" className='side-nav-link'><div className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
-            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
+            <li><Link to="/dashboard" className='side-nav-link'><img src={icon1} alt="" width={20}/> Dashboard</Link></li>
+            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><div className='active-one'><img src={icon2} alt="" width={20}/> Fund account</div></Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
@@ -31,7 +37,14 @@ const FundAccount = () => {
           </ul>
          </div>
          <div className='middle-body'>
-           
+           <center>
+            <h1 className="mt-5">Fund Account</h1>
+            <input type="text" className='input-area' placeholder='account name' onChange={(e)=>setaccountname(e.target.value)}/>
+            <input type="text" className='input-area' placeholder='account number' onChange={(e)=>setaccountnumber(e.target.value)}/>
+            <input type="text" className='input-area' placeholder='amount to deposits' onChange={(e)=>setamount(e.target.value)}/>
+            <input type="text" className='input-area' placeholder='transfer pin' onChange={(e)=>settransferpin2(e.target.value)}/>
+            <button className='btn' onClick={fundit}>Fund</button>
+           </center>
          </div>
        </div>
     </>

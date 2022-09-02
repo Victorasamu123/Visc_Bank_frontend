@@ -43,11 +43,11 @@ const FundAccount = () => {
          <div className='side-navbar'>
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
-            <li><Link to="/dashboard" className='side-nav-link'><img src={icon1} alt="" width={20}/> Dashboard</Link></li>
-            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><div className='active-one'><img src={icon2} alt="" width={20}/> Fund account</div></Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
+            <li><Link to="/dashboard" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon1} alt="" width={20}/> Dashboard</Link></li>
+            <li><Link to="/fundaccount" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><div className='active-one'><img src={icon2} alt="" width={20}/> Fund account</div></Link></li>
+            <li><Link to="/transfer" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
+            <li><Link to="/" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
+            <li><Link to="/" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
           </ul>
          </div>
@@ -62,15 +62,6 @@ const FundAccount = () => {
            </center>
          </div>
        </div>
-       <h6 className='bank-name'>Visc Bank</h6>
-          <ul className='mt-5'>
-            <li><Link to="/dashboard" className='side-nav-link'><div className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
-            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
-          </ul>
     </>
   )
 }

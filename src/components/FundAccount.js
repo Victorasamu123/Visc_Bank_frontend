@@ -6,6 +6,7 @@ import icon3 from "../images/receipt_long_FILL0_wght200_GRAD0_opsz48.svg"
 import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
+import axios from 'axios'
 const FundAccount = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [transferpin, settransferpin] = useState("")
@@ -14,13 +15,27 @@ const FundAccount = () => {
     const [amount, setamount] = useState("")
     const [transferpin2, settransferpin2] = useState("")
     const location = useLocation()
+    const endpoint99 = "http://localhost:3500/users/fund"
     useEffect(() => {
      setuserIdentification(location.state.userIdentification)
      settransferpin(location.state.transferpin)
      console.log(transferpin,userIdentification)
     }, [userIdentification,transferpin]);
     const fundit =()=>{
-        
+       if (accountname==""||accountnumber==""||amount==""||transferpin2=="") {
+        console.log("enter correct informatiion")
+       } else {
+        if (transferpin2!==transferpin) {
+            console.log("invalid pin")
+        } else {
+            let fundDetails={userIdentification,accountname,accountnumber,amount}
+            axios.post(endpoint99,fundDetails).then((result)=>{
+                console.log(result)
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
+       }
     }
   return (
     <>
@@ -47,6 +62,15 @@ const FundAccount = () => {
            </center>
          </div>
        </div>
+       <h6 className='bank-name'>Visc Bank</h6>
+          <ul className='mt-5'>
+            <li><Link to="/dashboard" className='side-nav-link'><div className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
+            <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
+          </ul>
     </>
   )
 }

@@ -9,6 +9,7 @@ import DashBoard from './components/DashBoard';
 import Deposits from './components/Deposits';
 import FundAccount from './components/FundAccount';
 import Transfer from './components/Transfer';
+import Wallets from './components/Wallets';
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
       <Route path='/deposits' element={<Deposits/>}/>
       <Route path='/fundaccount' element={<FundAccount/>}/>
       <Route path="/transfer"  element={<Transfer/>}/>
+      <Route path="/wallet" element={<Wallets/>}/>
     </Routes>
     </>
   );

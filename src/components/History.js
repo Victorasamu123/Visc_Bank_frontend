@@ -10,13 +10,22 @@ import axios from 'axios'
 const History = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [transferpin, settransferpin] = useState("")
+    const [fundHistory, setfundHistory] = useState([])
     const navigate = useNavigate()
     const location = useLocation()
+    const endpoint201 = "http://localhost:3500/users/history"
     useEffect(() => {
         setuserIdentification(location.state.userIdentification)
         settransferpin(location.state.transferpin)
         console.log(transferpin,userIdentification)
-    }, [transferpin,userIdentification])
+        axios.get(endpoint201).then((result)=>{
+            console.log(result)
+            setfundHistory(result)
+            console.log(fundHistory)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }, [transferpin,userIdentification,fundHistory])
     
   return (
     <>

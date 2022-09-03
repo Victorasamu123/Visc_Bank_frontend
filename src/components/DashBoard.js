@@ -51,7 +51,7 @@ const DashBoard = () => {
             <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
             <li><Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
-            <li><Link to="/" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
+            <li><Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
           </ul>
          </div>
@@ -80,13 +80,13 @@ const DashBoard = () => {
               <div className='fund-acct me-4'>
                <center>
                <img src={icon11} alt="" width={50}/><br />
-               <Link to="/"  className='basic-transactions-link'>Wallet</Link>
+               <Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Wallet</Link>
                </center>
               </div>
               <div className='fund-acct'>
                <center>
                <img src={icon12} alt="" width={50}/><br />
-               <Link to="/"  className='basic-transactions-link'>Transactions</Link>
+               <Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Transactions</Link>
                </center>
               </div>
            </div>

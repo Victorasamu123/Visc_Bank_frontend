@@ -10,6 +10,7 @@ import Deposits from './components/Deposits';
 import FundAccount from './components/FundAccount';
 import Transfer from './components/Transfer';
 import Wallets from './components/Wallets';
+import History from './components/History';
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
       <Route path='/fundaccount' element={<FundAccount/>}/>
       <Route path="/transfer"  element={<Transfer/>}/>
       <Route path="/wallet" element={<Wallets/>}/>
+      <Route path="/history" element={<History/>}/>
     </Routes>
     </>
   );

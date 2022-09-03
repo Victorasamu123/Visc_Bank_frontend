@@ -7,38 +7,17 @@ import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import axios from 'axios'
-const FundAccount = () => {
+const History = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [transferpin, settransferpin] = useState("")
-    const [accountname, setaccountname] = useState("")
-    const [accountnumber, setaccountnumber] = useState("")
-    const [amount, setamount] = useState("")
-    const [transferpin2, settransferpin2] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
-    const endpoint99 = "http://localhost:3500/users/fund"
     useEffect(() => {
-     setuserIdentification(location.state.userIdentification)
-     settransferpin(location.state.transferpin)
-     console.log(transferpin,userIdentification)
-    }, [userIdentification,transferpin]);
-    const fundit =()=>{
-       if (accountname==""||accountnumber==""||amount==""||transferpin2=="") {
-        console.log("enter correct informatiion")
-       } else {
-        if (transferpin2!==transferpin) {
-            console.log("invalid pin")
-        } else {
-            let fundDetails={userIdentification,accountname,accountnumber,amount}
-            axios.post(endpoint99,fundDetails).then((result)=>{
-                console.log(result)
-              }).catch((err)=>{
-                console.log(err);
-              })
-              navigate("/dashboard",{state:{user_id:userIdentification}})
-        }
-       }
-    }
+        setuserIdentification(location.state.userIdentification)
+        settransferpin(location.state.transferpin)
+        console.log(transferpin,userIdentification)
+    }, [transferpin,userIdentification])
+    
   return (
     <>
       <div className='container-div'>
@@ -54,18 +33,11 @@ const FundAccount = () => {
           </ul>
          </div>
          <div className='middle-body'>
-           <center>
-            <h1 className="mt-5">Fund Account</h1>
-            <input type="text" className='input-area' placeholder='account name' onChange={(e)=>setaccountname(e.target.value)}/>
-            <input type="text" className='input-area' placeholder='account number' onChange={(e)=>setaccountnumber(e.target.value)}/>
-            <input type="text" className='input-area' placeholder='amount to deposits' onChange={(e)=>setamount(e.target.value)}/>
-            <input type="text" className='input-area' placeholder='transfer pin' onChange={(e)=>settransferpin2(e.target.value)}/>
-            <button className='btn' onClick={fundit}>Fund</button>
-           </center>
+          
          </div>
        </div>
     </>
   )
 }
 
-export default FundAccount
+export default History;

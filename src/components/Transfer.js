@@ -17,6 +17,7 @@ const Transfer = () => {
     const [transferpin, settransferpin] = useState("")
     const [transferpin3, settransferpin3] = useState("")
     const [errorMessage, seterrorMessage] = useState("")
+    const navigate = useNavigate()
     const location = useLocation()
     const endpoint101 = "http://localhost:3500/users/transfer"
     useEffect(() => {
@@ -39,6 +40,7 @@ const Transfer = () => {
                 }).catch((err)=>{
                     console.log(err);
                 })
+                navigate("/dashboard",{state:{user_id:userIdentification}})
             }
            }
     }
@@ -52,7 +54,7 @@ const Transfer = () => {
             <li><Link to="/fundaccount" state={{user_id:userIdentification,transferpin:transferpin}}  className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
             <li><Link to="/transfer" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><div className='active-one'><img src={icon3} alt="" width={20}/> Transfer</div></Link></li>
             <li><Link to="/wallet" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
-            <li><Link to="/" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
+            <li><Link to="/history" state={{user_id:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
             <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
           </ul>
          </div>

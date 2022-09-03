@@ -21,7 +21,7 @@ const Signin = () => {
         let user_id =  result.data.user_id
         setmessage(result.data.message);
         console.log(user_id)
-        if (result.data.stastus===true) {
+        if (result.data.status==true) {
           navigate("/dashboard",{state:{user_id:user_id}})
         } else {
           console.log("signin not successful")

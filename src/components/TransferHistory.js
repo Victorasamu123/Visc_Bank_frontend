@@ -7,7 +7,7 @@ import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import axios from 'axios'
-import "../styles/History.css"
+import "../styles/History2.css"
 
 
 const TransferHistory = () => {
@@ -59,8 +59,8 @@ const TransferHistory = () => {
           <center>
             <h1 className='mt-5 pt-3'>Funds Transactions History</h1>
             <div>
-                <button className='btn btn-info me-3' onClick={getTransfer}>Funds History</button>
-                <button className='btn btn-danger me-3' onClick={goToFund}>Transfer History</button>
+                <button className='btn btn-info me-3' onClick={goToFund}>Funds History</button>
+                <button className='btn btn-danger me-3'  onClick={getTransfer}>Transfer History</button>
             </div>
           </center>
           <div className='carrier-div'>
@@ -70,9 +70,10 @@ const TransferHistory = () => {
                          <div className="row">
                             <div className="col-lg-8 col-sm-12 mx-auto">
                                 <div className='card shadow-sm'>
-                                    <span className='mt-2 ms-3 acct-nm'>{history.accountname}</span>
-                                    <span className='acct-num'>{history.accountnumber}</span>
-                                    <span className='acct-amt'>+{history.amount}</span>
+                                    <span className='mt-2 ms-3 acct-nmt'>{history.receiverAcccoutName}</span>
+                                    <span className='acct-numt'>{history.receiverAccountNumber}</span>
+                                    <span className='acct-ambt'>{history.bankName}</span>
+                                    <span className='acct-amtt'>+{history.amountTransfering}</span>
                                 </div>
                             </div>
                          </div>

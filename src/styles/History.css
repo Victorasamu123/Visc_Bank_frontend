@@ -1,0 +1,8 @@
+.card{
+    background-image: linear-gradient(to right,rgb(43,43,43), rgb(59,59,59), rgb(78,78,78));
+    margin-top: 10px;
+    height: 50px !important;
+}
+.carrier-div{
+    margin-top: 20px;
+}

@@ -8,40 +8,42 @@ import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import axios from 'axios'
 import "../styles/History.css"
-const History = () => {
+
+
+const TransferHistory = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [transferpin, settransferpin] = useState("")
     const [accountfundname, setaccountfundname] = useState("")
     const [accountfundnumber, setaccountfundnumber] = useState("")
     const [fundamount, setfundamount] = useState("")
-    const [fundHistory, setfundHistory] = useState([])
+    const [transferHistory, settransferHistory] = useState([])
     const [newfundHistory, setnewfundHistory] = useState([])
     const navigate = useNavigate()
     const location = useLocation()
-    const endpoint201 = "http://localhost:3500/users/history"
+    const endpoint303 = "http://localhost:3500/users/transferhistory"
     useEffect(() => {
         setuserIdentification(location.state.userIdentification)
         settransferpin(location.state.transferpin)
         console.log(transferpin,userIdentification)
-        getFund()
+        getTransfer()
     }, [transferpin,userIdentification]);
-    const getFund=()=>{
-        let fundOject={userIdentification}
-        axios.post(endpoint201,fundOject).then((result)=>{
+    const getTransfer=()=>{
+        let transferOject={userIdentification}
+        axios.post(endpoint303,transferOject).then((result)=>{
             console.log(result.data)
             console.log(result.data)
-            setfundHistory(result.data)
-            console.log(fundHistory);
+            settransferHistory(result.data)
+            console.log(transferHistory);
         }).catch((err)=>{
             console.log(err)
         })
       }
-      const goToTransfer=()=>{
-        navigate("/transferhistory",{state:{userIdentification:userIdentification,transferpin:transferpin}})
+      const goToFund=()=>{
+        navigate("/history",{state:{userIdentification:userIdentification,transferpin:transferpin}})
       }
   return (
     <>
-      <div className='container-div'>
+    <div className='container-div'>
          <div className='side-navbar'>
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
@@ -57,13 +59,13 @@ const History = () => {
           <center>
             <h1 className='mt-5 pt-3'>Funds Transactions History</h1>
             <div>
-                <button className='btn btn-info me-3' onClick={getFund}>Funds History</button>
-                <button className='btn btn-danger me-3' onClick={goToTransfer}>Transfer History</button>
+                <button className='btn btn-info me-3' onClick={getTransfer}>Funds History</button>
+                <button className='btn btn-danger me-3' onClick={goToFund}>Transfer History</button>
             </div>
           </center>
           <div className='carrier-div'>
-                {fundHistory==""?<div></div>:
-                    fundHistory.map((history,index)=>(
+                {transferHistory==""?<div></div>:
+                    transferHistory.map((history,index)=>(
                         <div className='container-fluid'>
                          <div className="row">
                             <div className="col-lg-8 col-sm-12 mx-auto">
@@ -80,8 +82,8 @@ const History = () => {
                 </div>
          </div>
        </div>
-    </>
+       </>
   )
 }
 
-export default History;
+export default TransferHistory;

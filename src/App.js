@@ -11,6 +11,7 @@ import FundAccount from './components/FundAccount';
 import Transfer from './components/Transfer';
 import Wallets from './components/Wallets';
 import History from './components/History';
+import TransferHistory from './components/TransferHistory';
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
       <Route path="/transfer"  element={<Transfer/>}/>
       <Route path="/wallet" element={<Wallets/>}/>
       <Route path="/history" element={<History/>}/>
+      <Route path="/transferhistory" element={<TransferHistory/>}/>
     </Routes>
     </>
   );

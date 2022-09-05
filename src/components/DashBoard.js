@@ -64,40 +64,40 @@ const DashBoard = () => {
              <div className='amount-text pt-2 ms-3'>${initialbalance}</div>
              <div className='account-number mt-5 pt-3 ms-3'>{accountnumber}</div>
            </div>
-           <div className='basic-transactions'>
+           <div className='basic-transactions' id='basic-transactions-id'>
               <div className='fund-acct me-4'>
                <center>
                <img src={icon9} alt="" width={50}/><br />
                <Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='basic-transactions-link'>Fund account</Link>
                </center>
               </div>
-              <div className='fund-acct me-4'>
+              <div className='fund-acct2 me-4' >
                <center>
                <img src={icon10} alt="" width={50}/><br />
                <Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='basic-transactions-link'>Transfer</Link>
                </center>
               </div>
-              <div className='fund-acct me-4'>
+              <div className='fund-acct3 me-4' >
                <center>
                <img src={icon11} alt="" width={50}/><br />
                <Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Wallet</Link>
                </center>
               </div>
-              <div className='fund-acct'>
+              {/* <div className='fund-acct4' >
                <center>
                <img src={icon12} alt="" width={50}/><br />
                <Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Transactions</Link>
                </center>
-              </div>
+              </div> */}
            </div>
-           <div className='bills-div'>
+           {/* <div className='bills-div'>
            <div className='pay-bills-transsaction me-5'>
             
            </div>
            <div className='mobile-transaction'>
             
            </div>
-           </div>
+           </div> */}
          </div>
        </div>
     </>

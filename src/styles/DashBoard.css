@@ -87,7 +87,7 @@ li{
     margin-top: -160px;
     margin-left: 30px;
 }
-.fund-acct{
+.fund-acct,.fund-acct2,.fund-acct3,.fund-acct4{
     width: 120px;
     height: 80px;
     border: 2px solid rgb(232,231,224);
@@ -116,4 +116,55 @@ li{
     height: 200px;
     border: 2px solid rgb(232,231,224);
     border-radius: 9px;
+}
+@media only screen and (max-width: 600px) {
+    .middle-body{
+        width: 100%;
+        height: 1600px;
+    }
+    .side-navbar{
+        display: none !important;
+    }
+    .search-div{
+        margin-top: 60px;
+        margin-left: 10px;
+    }
+    .username-div{
+        margin-left: 75px;
+        margin-top: 10px;
+    }
+    .current-balance-div{
+        margin-left: 20px;
+        margin-top: 10px;
+        /* width: 90%; */
+    }
+    #basic-transactions-id{
+        display: block;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .fund-acct{
+        width: 40%;
+        height: 80px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+    }
+    .fund-acct2{
+        width: 40%;
+        height: 80px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+        position: relative;
+        left: 160px;
+        top: -80px;
+    }
+    /* .fund-acct3{
+        width: 40%;
+        height: 80px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+        position: relative;
+        left: -230px;
+        top: 100px;
+    } */
 }

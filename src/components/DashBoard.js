@@ -47,7 +47,7 @@ const DashBoard = () => {
          <div className='side-navbar'>
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
-            <li><Link to="/dashboard" className='side-nav-link'><button className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</button></Link></li>
+            <li><Link to="/dashboard" className='side-nav-link'><div className='active-one btn'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
             <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
             <li><Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>

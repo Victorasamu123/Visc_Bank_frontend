@@ -39,6 +39,8 @@ li{
    height: fit-content !important;
    width: fit-content !important;
    padding: 10px;
+   color: white !important;
+   outline: 0;
 }
 .middle-body{
     width: 82%;

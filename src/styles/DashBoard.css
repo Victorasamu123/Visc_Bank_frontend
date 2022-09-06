@@ -127,7 +127,7 @@ li{
     }
     .search-div{
         margin-top: 60px;
-        margin-left: 10px;
+        margin-left: 20px;
     }
     .username-div{
         margin-left: 75px;
@@ -158,13 +158,40 @@ li{
         left: 160px;
         top: -80px;
     }
-    /* .fund-acct3{
+    .fund-acct3{
         width: 40%;
         height: 80px;
         border: 2px solid rgb(232,231,224);
         border-radius: 9px;
         position: relative;
-        left: -230px;
-        top: 100px;
-    } */
+        left: 0px;
+        top: -60px;
+    }
+    .fund-acct4{
+        width: 40%;
+        height: 80px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+        position: relative;
+        left: 160px;
+        top: -141px;
+    }
+    .bills-div{
+        display: block;
+        margin-top: -120px;
+        margin-left: 20px;
+    }
+    .pay-bills-transsaction{
+        width: 90%;
+        height: 200px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+        margin-bottom: 30px;
+    }
+    .mobile-transaction{
+        width: 90%;
+        height: 200px;
+        border: 2px solid rgb(232,231,224);
+        border-radius: 9px;
+    }
 }

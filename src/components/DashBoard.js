@@ -83,21 +83,21 @@ const DashBoard = () => {
                <Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Wallet</Link>
                </center>
               </div>
-              {/* <div className='fund-acct4' >
+              <div className='fund-acct4' >
                <center>
                <img src={icon12} alt="" width={50}/><br />
                <Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}}  className='basic-transactions-link'>Transactions</Link>
                </center>
-              </div> */}
+              </div>
            </div>
-           {/* <div className='bills-div'>
+           <div className='bills-div'>
            <div className='pay-bills-transsaction me-5'>
             
            </div>
            <div className='mobile-transaction'>
             
            </div>
-           </div> */}
+           </div>
          </div>
        </div>
     </>

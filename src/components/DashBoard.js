@@ -10,10 +10,10 @@ import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon7 from "../images/search-outline.svg"
 import icon8 from "../images/images-removebg-preview.png"
-import icon9 from "../images/download-removebg-preview.png"
-import icon10 from "../images/download-removebg-preview (1).png"
-import icon11 from "../images/wallet-money-in-icon-vector-21023442-removebg-preview.png"
-import icon12 from "../images/download-removebg-preview (2).png"
+import icon9 from "../images/008-credit-card.svg"
+import icon10 from "../images/020-money-bag.svg"
+import icon11 from "../images/035-wallet-1.svg"
+import icon12 from "../images/002-bank.svg"
 const DashBoard = () => {
   const [userIdentification, setuserIdentification] = useState("")
   const [firstname, setfirstname] = useState("")
@@ -47,7 +47,7 @@ const DashBoard = () => {
          <div className='side-navbar'>
           <h6 className='bank-name'>Visc Bank</h6>
           <ul className='mt-5'>
-            <li><Link to="/dashboard" className='side-nav-link'><div className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</div></Link></li>
+            <li><Link to="/dashboard" className='side-nav-link'><button className='active-one'><img src={icon1} alt="" width={20}/> Dashboard</button></Link></li>
             <li><Link to="/fundaccount" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon2} alt="" width={20}/> Fund account</Link></li>
             <li><Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
@@ -56,7 +56,7 @@ const DashBoard = () => {
           </ul>
          </div>
          <div className='middle-body'>
-           <div className='search-div'><img src={icon7} alt=""width={20} className="ms-4"/><input type="text" className='search-input' placeholder='Search...'/></div>
+           <div className='search-div'><img src={icon7} alt=""width={20} className="ms-4"/></div>
            <div className='username-div'>{lastname} {firstname}</div>
            <div className='current-balance-div'>
              <h6 className='current-balance-text pt-3 ms-3'>Current Balance</h6>

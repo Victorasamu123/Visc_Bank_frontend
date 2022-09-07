@@ -5,6 +5,9 @@
 /* :root{
 
 } */
+.navbar{
+    display: none !important;
+}
 .side-navbar{
     width: 18%;
     height: 625px;
@@ -128,10 +131,27 @@ li{
     border: 2px solid rgb(232,231,224);
     border-radius: 9px;
 }
+.lolo{
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .middle-body{
         width: 100%;
         height: 1600px;
+        padding-top: 20px;
+    }
+    .navbar{
+        display: inline !important;
+        margin-left: 20px;
+        
+    }
+    .lolo{
+        font-size: 25px !important;
+        display: inline !important;
+        margin-left: 120px;
+    }
+    .navbar-nav{
+        margin-left: 100px !important;
     }
     .side-navbar{
         display: none !important;

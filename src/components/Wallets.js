@@ -69,6 +69,82 @@ const Wallets = () => {
           </ul>
         </div>
         <div className='middle-body'>
+        <nav className="navbar navbar-expand-lg mt-5">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                <Link to="/dashboard" state={{user_id:userIdentification,transferpin:transferpin}} className="side-nav-link">
+                  <img src={icon1} alt="" width={20} /> Dashboard
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/fundaccount"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon2} alt="" width={20} /> Fund account
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/transfer"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon3} alt="" width={20} /> Transfer
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/wallet"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon4} alt="" width={20} /> Wallet
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/history"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon5} alt="" width={20} /> Transaction history
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/" className="side-nav-link">
+                <img src={icon6} alt="" width={20} /> sign out
+              </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="lolo">Visc Bank</div>
           <h1 className='text-center mt-3'>Wallets</h1>
 
           <button type="button" className="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -126,7 +202,7 @@ const Wallets = () => {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onClick={fund}>Fund</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={fund}>Fund</button>
               </div>
             </div>
           </div>

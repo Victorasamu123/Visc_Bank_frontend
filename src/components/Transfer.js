@@ -59,6 +59,82 @@ const Transfer = () => {
           </ul>
          </div>
          <div className='middle-body'>
+         <nav className="navbar navbar-expand-lg mt-5">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                <Link to="/dashboard" state={{user_id:userIdentification,transferpin:transferpin}} className="side-nav-link">
+                  <img src={icon1} alt="" width={20} /> Dashboard
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/fundaccount"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon2} alt="" width={20} /> Fund account
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/transfer"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon3} alt="" width={20} /> Transfer
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/wallet"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon4} alt="" width={20} /> Wallet
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/history"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon5} alt="" width={20} /> Transaction history
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/" className="side-nav-link">
+                <img src={icon6} alt="" width={20} /> sign out
+              </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="lolo">Visc Bank</div>
            <center>
             {
                 errorMessage==""? <div></div>: <div className="alert alert-danger">{errorMessage}</div>
@@ -69,7 +145,7 @@ const Transfer = () => {
             <input type="text" className='input-area' placeholder='amount to transfer' onChange={(e)=>setamountTransfering(e.target.value)}/>
             <input type="text" className='input-area' placeholder='Receiver bank' onChange={(e)=>setbankName(e.target.value)}/>
             <input type="text" className='input-area' placeholder='transfer pin' onChange={(e)=>settransferpin3(e.target.value)}/>
-            <button className='btn' onClick={transfer}>Transfer</button>
+            <button className='btn btn-primary' onClick={transfer}>Transfer</button>
            </center>
          </div>
        </div>

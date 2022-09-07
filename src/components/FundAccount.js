@@ -13,6 +13,7 @@ const FundAccount = () => {
     const [accountname, setaccountname] = useState("")
     const [accountnumber, setaccountnumber] = useState("")
     const [amount, setamount] = useState("")
+    const [amount, setamount] = useState("")
     const [transferpin2, settransferpin2] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
@@ -54,13 +55,89 @@ const FundAccount = () => {
           </ul>
          </div>
          <div className='middle-body'>
+         <nav className="navbar navbar-expand-lg mt-5">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                <Link to="/dashboard" state={{user_id:userIdentification,transferpin:transferpin}} className="side-nav-link">
+                  <img src={icon1} alt="" width={20} /> Dashboard
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/fundaccount"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon2} alt="" width={20} /> Fund account
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/transfer"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon3} alt="" width={20} /> Transfer
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/wallet"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon4} alt="" width={20} /> Wallet
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/history"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon5} alt="" width={20} /> Transaction history
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/" className="side-nav-link">
+                <img src={icon6} alt="" width={20} /> sign out
+              </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="lolo">Visc Bank</div>
            <center>
             <h1 className="mt-5">Fund Account</h1>
             <input type="text" className='input-area' placeholder='account name' onChange={(e)=>setaccountname(e.target.value)}/>
             <input type="text" className='input-area' placeholder='account number' onChange={(e)=>setaccountnumber(e.target.value)}/>
             <input type="text" className='input-area' placeholder='amount to deposits' onChange={(e)=>setamount(e.target.value)}/>
             <input type="text" className='input-area' placeholder='transfer pin' onChange={(e)=>settransferpin2(e.target.value)}/>
-            <button className='btn' onClick={fundit}>Fund</button>
+            <button className='btn btn-primary' onClick={fundit}>Fund</button>
            </center>
          </div>
        </div>

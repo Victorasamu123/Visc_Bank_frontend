@@ -15,36 +15,44 @@ const Wallets = () => {
   const [walletname, setwalletname] = useState("")
   const [walletdescription, setwalletdescription] = useState("")
   const [targetamount, settargetamount] = useState("")
+  const [amounttofound, setamounttofound] = useState("")
   const [fundHistory, setfundHistory] = useState([])
   const [newfundHistory, setnewfundHistory] = useState([])
   const location = useLocation()
-  const navigate=useNavigate()
-  const endpoint333= "http://localhost:3500/users/wallets"
-  const endpoint344= "http://localhost:3500/users/getwallets"
+  const navigate = useNavigate()
+  const endpoint333 = "http://localhost:3500/users/wallets"
+  const endpoint344 = "http://localhost:3500/users/getwallets"
+  const endpoint355 = "http://localhost:3500/users/fundwallets"
   useEffect(() => {
     setuserIdentification(location.state.userIdentification)
     settransferpin(location.state.transferpin)
     console.log(transferpin, userIdentification)
     getWalletdata()
   }, [userIdentification, transferpin])
-  const createWallet =()=>{
-    let walletObj={walletname,walletdescription,targetamount,userIdentification};
-    axios.post(endpoint333,walletObj).then((result)=>{
+  const createWallet = () => {
+    let walletObj = { walletname, walletdescription, targetamount, userIdentification };
+    axios.post(endpoint333, walletObj).then((result) => {
       console.log(result)
-      navigate("/dashboard",{state:{user_id:userIdentification}})
+      navigate("/dashboard", { state: { user_id: userIdentification } })
     })
-    
+
   }
-  const getWalletdata=()=>{
-    let getWallet={userIdentification};
-    axios.post(endpoint344,getWallet).then((result)=>{
+  const getWalletdata = () => {
+    let getWallet = { userIdentification };
+    axios.post(endpoint344, getWallet).then((result) => {
       console.log(result)
       setfundHistory(result.data)
       // setnewfundHistory(fundHistory.reverse())
       // console.log(newfundHistory)
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err)
-  })
+    })
+  }
+  const fund =()=>{
+    let fundwallet = {userIdentification,amounttofound};
+    axios.post(endpoint355,fundwallet).then((result)=>{
+      console.log(result)
+    })
   }
   return (
     <>
@@ -66,31 +74,59 @@ const Wallets = () => {
           <button type="button" className="btn btn-primary ms-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Create a new wallet
           </button>
-          <button type="button" className="btn btn-primary" style={{display:"none"}} onClick={getWalletdata}>Wallets</button>
-          {
-            fundHistory==""?<center><h1>No available wallet</h1></center>:
-            fundHistory.map((wallet,index)=>(
-              <div className='wallet-general-div'>
-                  
-              </div>
-            ))
-          }
+          <button type="button" className="btn btn-primary" style={{ display: "none" }} onClick={getWalletdata}>Wallets</button>
+          <div className='row w-100'>
+            {
+              fundHistory == "" ? <center><h1>No available wallet</h1></center> :
+                fundHistory.map((wallet, index) => (
+
+                  <div className='wallet-general-div col-4 mt-5 ms-5'>
+                    <center>
+                      <div className='text-light mt-3'>{wallet.walletname}</div>
+                    </center>
+                    <div className='text-light'>{wallet.walletdescription}</div>
+                    <div className='text-light mb-3'>Target amount:${wallet.targetamount}</div>
+                    <button className='btn btn-info me-3' data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Fund wallet</button>
+                    <button className='btn btn-danger w-25'>Del</button>
+                  </div>
+
+                ))
+            }
+          </div>
           <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
+                  <h5 className="modal-title" id="staticBackdropLabel">Wallet Details</h5>
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                 <input type="text" placeholder='Wallet name' className='form-control mb-3' onChange={(e)=>setwalletname(e.target.value)}/>
-                 <input type="text" placeholder='Wallet description' className='form-control mb-3' onChange={(e)=>setwalletdescription(e.target.value)}/>
-                 <input type="text" placeholder='Target amount' className='form-control mb-3' onChange={(e)=>settargetamount(e.target.value)}/>
+                  <input type="text" placeholder='Wallet name' className='form-control mb-3' onChange={(e) => setwalletname(e.target.value)} />
+                  <input type="text" placeholder='Wallet description' className='form-control mb-3' onChange={(e) => setwalletdescription(e.target.value)} />
+                  <input type="text" placeholder='Target amount' className='form-control mb-3' onChange={(e) => settargetamount(e.target.value)} />
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={createWallet}>Wallets</button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <input type="text" placeholder='enter amount' onChange={(e)=>setamounttofound(e.target.value)}/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onClick={fund}>Fund</button>
               </div>
             </div>
           </div>

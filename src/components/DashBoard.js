@@ -57,7 +57,7 @@ const DashBoard = () => {
          </div>
          <div className='middle-body'>
            <div className='search-div'><img src={icon7} alt=""width={20} className="ms-4"/></div>
-           <div className='username-div'>{lastname} {firstname}</div>
+           <div className='username-div'>Welcome,{lastname} {firstname}</div>
            <div className='current-balance-div'>
              <h6 className='current-balance-text pt-3 ms-3'>Current Balance</h6>
              <div className='master-card'><img src={icon8} alt="" width={35}/></div>

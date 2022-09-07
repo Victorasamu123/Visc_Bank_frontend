@@ -4,4 +4,19 @@
 }
 .wallet-general-div{
     background-color:rgb(29,18,128) !important;
+    /* width:40% !important; */
+    height:180px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        display: block !important;
+    }
+    .wallet-general-div{
+        background-color:rgb(29,18,128) !important;
+        width:80% !important;
+        height:150px;
+        border-radius: 8px;
+    }
 }

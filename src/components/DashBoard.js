@@ -22,12 +22,12 @@ const DashBoard = () => {
   const [accountnumber, setaccountnumber] = useState("");
   const [transferpin, settransferpin] = useState("");
   const [initialbalance, setinitialbalance] = useState("");
-  const [fundHistory, setfundHistory] = useState([])
-  const [newfundHistory, setnewfundHistory] = useState([])
+  const [fundHistory, setfundHistory] = useState([]);
+  const [newfundHistory, setnewfundHistory] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
   const endpoint22 = "http://localhost:3500/users/dashboard";
-  const endpoint201 = "http://localhost:3500/users/history"
+  const endpoint201 = "http://localhost:3500/users/history";
   useEffect(() => {
     console.log(location.state.user_id);
     setuserIdentification(location.state.user_id);
@@ -47,7 +47,7 @@ const DashBoard = () => {
       .catch((err) => {
         console.log(err);
       });
-      getFund();
+    getFund();
   }, [
     userIdentification,
     firstname,
@@ -56,21 +56,30 @@ const DashBoard = () => {
     transferpin,
     initialbalance,
   ]);
-  const getFund=()=>{
-    let fundOject={userIdentification}
-    axios.post(endpoint201,fundOject).then((result)=>{
-        console.log(result.data)
-        console.log(result.data)
-        setfundHistory(result.data)
-        setnewfundHistory(result.data.reverse())
+  const getFund = () => {
+    let fundOject = { userIdentification };
+    axios
+      .post(endpoint201, fundOject)
+      .then((result) => {
+        console.log(result.data);
+        console.log(result.data);
+        setfundHistory(result.data);
+        setnewfundHistory(result.data.reverse());
         console.log(newfundHistory);
-    }).catch((err)=>{
-        console.log(err)
-    })
-  }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
-  <button className='btn btn-info me-3' onClick={getFund} style={{display:"none"}}>Funds History</button>
+      <button
+        className="btn btn-info me-3"
+        onClick={getFund}
+        style={{ display: "none" }}
+      >
+        Funds History
+      </button>
       <div className="container-div">
         <div className="side-navbar">
           <h6 className="bank-name">Visc Bank</h6>
@@ -132,7 +141,8 @@ const DashBoard = () => {
             </li>
             <li>
               <Link to="/" className="side-nav-link">
-                <img src={icon6} alt="" width={20} />Sign out
+                <img src={icon6} alt="" width={20} />
+                Sign out
               </Link>
             </li>
           </ul>
@@ -153,62 +163,62 @@ const DashBoard = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                <Link to="/dashboard" className="side-nav-link">
-                  <img src={icon1} alt="" width={20} /> Dashboard
-              </Link>
+                  <Link to="/dashboard" className="side-nav-link">
+                    <img src={icon1} alt="" width={20} /> Dashboard
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link
-                to="/fundaccount"
-                state={{
-                  userIdentification: userIdentification,
-                  transferpin: transferpin,
-                }}
-                className="side-nav-link"
-              >
-                <img src={icon2} alt="" width={20} /> Fund account
-              </Link>
+                  <Link
+                    to="/fundaccount"
+                    state={{
+                      userIdentification: userIdentification,
+                      transferpin: transferpin,
+                    }}
+                    className="side-nav-link"
+                  >
+                    <img src={icon2} alt="" width={20} /> Fund account
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link
-                to="/transfer"
-                state={{
-                  userIdentification: userIdentification,
-                  transferpin: transferpin,
-                }}
-                className="side-nav-link"
-              >
-                <img src={icon3} alt="" width={20} /> Transfer
-              </Link>
+                  <Link
+                    to="/transfer"
+                    state={{
+                      userIdentification: userIdentification,
+                      transferpin: transferpin,
+                    }}
+                    className="side-nav-link"
+                  >
+                    <img src={icon3} alt="" width={20} /> Transfer
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link
-                to="/wallet"
-                state={{
-                  userIdentification: userIdentification,
-                  transferpin: transferpin,
-                }}
-                className="side-nav-link"
-              >
-                <img src={icon4} alt="" width={20} /> Wallet
-              </Link>
+                  <Link
+                    to="/wallet"
+                    state={{
+                      userIdentification: userIdentification,
+                      transferpin: transferpin,
+                    }}
+                    className="side-nav-link"
+                  >
+                    <img src={icon4} alt="" width={20} /> Wallet
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link
-                to="/history"
-                state={{
-                  userIdentification: userIdentification,
-                  transferpin: transferpin,
-                }}
-                className="side-nav-link"
-              >
-                <img src={icon5} alt="" width={20} /> Transaction history
-              </Link>
+                  <Link
+                    to="/history"
+                    state={{
+                      userIdentification: userIdentification,
+                      transferpin: transferpin,
+                    }}
+                    className="side-nav-link"
+                  >
+                    <img src={icon5} alt="" width={20} /> Transaction history
+                  </Link>
                 </li>
                 <li className="nav-item">
-                <Link to="/" className="side-nav-link">
-                <img src={icon6} alt="" width={20} /> sign out
-              </Link>
+                  <Link to="/" className="side-nav-link">
+                    <img src={icon6} alt="" width={20} /> sign out
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -300,11 +310,21 @@ const DashBoard = () => {
           </div>
           <div className="recent-transactions">
             <center>
-            <h3>Recent Transactions</h3>
-            {
-              newfundHistory==""?<h1 className='text-center'></h1>
-            }
-            </center>
+              <h3>Recent Transactions</h3>
+              </center>
+              {newfundHistory == "" ? (
+                <h3 className="text-center">No history</h3>
+              ) : (
+                newfundHistory.map((his, index) => (
+                  <div className="his-con">
+                    <div className="mt-2 ms-3 das-nm">
+                      {his.accountname}
+                    </div>
+                    <div className="das-num">{his.accountnumber}</div>
+                    <div className="das-amt">+{his.amount}</div>
+                  </div>
+                ))
+              )}
           </div>
         </div>
       </div>

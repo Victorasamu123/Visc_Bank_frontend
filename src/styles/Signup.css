@@ -31,7 +31,7 @@ h3{
     font-weight: 400;
     line-height: 1.5;
     color:black;
-    background:linear-gradient(to bottom right,rgba(8,8,138,.308),rgba(233,120,139,.329)) !important;
+    background-color: white;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     -webkit-appearance: none;

@@ -44,6 +44,7 @@ li{
    padding: 10px;
    color: white !important;
    outline: 0;
+   fill: white;
 }
 .middle-body{
     width: 82%;
@@ -133,6 +134,10 @@ li{
 }
 .lolo{
     display: none;
+}
+.recent-transactions{
+    margin-left: 140px;
+    margin-top: -140px;
 }
 @media only screen and (max-width: 600px) {
     .middle-body{

@@ -13,7 +13,7 @@ const FundAccount = () => {
     const [accountname, setaccountname] = useState("")
     const [accountnumber, setaccountnumber] = useState("")
     const [amount, setamount] = useState("")
-    const [amount, setamount] = useState("")
+    const [message, setmessage] = useState("")
     const [transferpin2, settransferpin2] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
@@ -26,9 +26,11 @@ const FundAccount = () => {
     const fundit =()=>{
        if (accountname==""||accountnumber==""||amount==""||transferpin2=="") {
         console.log("enter correct informatiion")
+        setmessage("enter correct information")
        } else {
         if (transferpin2!==transferpin) {
             console.log("invalid pin")
+            setmessage("invalid pin")
         } else {
             let fundDetails={userIdentification,accountname,accountnumber,amount}
             axios.post(endpoint99,fundDetails).then((result)=>{
@@ -51,7 +53,7 @@ const FundAccount = () => {
             <li><Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
             <li><Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon5} alt="" width={20}/> Transaction history</Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Sign out</Link></li>
           </ul>
          </div>
          <div className='middle-body'>
@@ -132,6 +134,9 @@ const FundAccount = () => {
           </nav>
           <div className="lolo">Visc Bank</div>
            <center>
+           {
+            message!==""?<div className='alert alert-danger'>{message}</div>:<div></div>
+          }
             <h1 className="mt-5">Fund Account</h1>
             <input type="text" className='input-area' placeholder='account name' onChange={(e)=>setaccountname(e.target.value)}/>
             <input type="text" className='input-area' placeholder='account number' onChange={(e)=>setaccountnumber(e.target.value)}/>

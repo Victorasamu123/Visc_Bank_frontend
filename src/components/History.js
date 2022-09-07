@@ -30,7 +30,7 @@ const History = () => {
         axios.post(endpoint201,fundOject).then((result)=>{
             console.log(result.data)
             console.log(result.data)
-            setfundHistory(result.data)
+            setfundHistory(result.data.reverse())
             console.log(fundHistory);
         }).catch((err)=>{
             console.log(err)
@@ -50,10 +50,86 @@ const History = () => {
             <li><Link to="/transfer" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon3} alt="" width={20}/> Transfer</Link></li>
             <li><Link to="/wallet" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><img src={icon4} alt="" width={20}/> Wallet</Link></li>
             <li><Link to="/history" state={{userIdentification:userIdentification,transferpin:transferpin}} className='side-nav-link'><div className='active-one btn'><img src={icon5} alt="" width={20}/> Transaction history</div></Link></li>
-            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/> Quick transaction</Link></li>
+            <li><Link to="/" className='side-nav-link'><img src={icon6} alt="" width={20}/>Sign out</Link></li>
           </ul>
          </div>
          <div className='middle-body'>
+         <nav className="navbar navbar-expand-lg mt-5">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                <Link to="/dashboard" state={{user_id:userIdentification,transferpin:transferpin}} className="side-nav-link">
+                  <img src={icon1} alt="" width={20} /> Dashboard
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/fundaccount"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon2} alt="" width={20} /> Fund account
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/transfer"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon3} alt="" width={20} /> Transfer
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/wallet"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon4} alt="" width={20} /> Wallet
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link
+                to="/history"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+                className="side-nav-link"
+              >
+                <img src={icon5} alt="" width={20} /> Transaction history
+              </Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/" className="side-nav-link">
+                <img src={icon6} alt="" width={20} /> sign out
+              </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div className="lolo">Visc Bank</div>
           <center>
             <h1 className='mt-5 pt-3'>Funds Transactions History</h1>
             <div>
@@ -62,7 +138,7 @@ const History = () => {
             </div>
           </center>
           <div className='carrier-div'>
-                {fundHistory==""?<div></div>:
+                {fundHistory==""?<h1 className='text-center'>No fund history</h1>:
                     fundHistory.map((history,index)=>(
                         <div className='container-fluid'>
                          <div className="row">

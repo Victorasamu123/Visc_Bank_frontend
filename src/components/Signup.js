@@ -20,6 +20,7 @@ const Signup = () => {
     if (firstname == "" || lastname == "" || Phonenumber
       == "" || email == "" || password == "" || transferpin== "") {
       console.log("enter correct informatiion")
+      setmessage("enter correct informatiion");
     } else {
       let userDetails = { firstname, lastname, Phonenumber, email, password,transferpin, accountnumber, initialbalance }
       axios.post(endpoint, userDetails).then((result) => {
@@ -50,7 +51,7 @@ const Signup = () => {
             <input type="email" placeholder='Email address' className='input-area' onChange={(e) => setemail(e.target.value)} />
             <input type="password" placeholder='Password' className='input-area' onChange={(e) => setpassword(e.target.value)} />
             <input type="password" placeholder='Transfer pin' className='input-area' onChange={(e) => settransferpin(e.target.value)} />
-            <button className='btn w-25 mt-3' onClick={signup}>signup</button>
+            <button className='btn w-25 mt-3 btn-primary' onClick={signup}>signup</button>
             <p>
               Already have an account?<Link to="/signin" className='link'>sign in here</Link>
             </p>

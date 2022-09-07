@@ -22,9 +22,12 @@ const DashBoard = () => {
   const [accountnumber, setaccountnumber] = useState("");
   const [transferpin, settransferpin] = useState("");
   const [initialbalance, setinitialbalance] = useState("");
+  const [fundHistory, setfundHistory] = useState([])
+  const [newfundHistory, setnewfundHistory] = useState([])
   const location = useLocation();
   const navigate = useNavigate();
   const endpoint22 = "http://localhost:3500/users/dashboard";
+  const endpoint201 = "http://localhost:3500/users/history"
   useEffect(() => {
     console.log(location.state.user_id);
     setuserIdentification(location.state.user_id);
@@ -44,6 +47,7 @@ const DashBoard = () => {
       .catch((err) => {
         console.log(err);
       });
+      getFund();
   }, [
     userIdentification,
     firstname,
@@ -52,8 +56,21 @@ const DashBoard = () => {
     transferpin,
     initialbalance,
   ]);
+  const getFund=()=>{
+    let fundOject={userIdentification}
+    axios.post(endpoint201,fundOject).then((result)=>{
+        console.log(result.data)
+        console.log(result.data)
+        setfundHistory(result.data)
+        setnewfundHistory(result.data.reverse())
+        console.log(newfundHistory);
+    }).catch((err)=>{
+        console.log(err)
+    })
+  }
   return (
     <>
+  <button className='btn btn-info me-3' onClick={getFund} style={{display:"none"}}>Funds History</button>
       <div className="container-div">
         <div className="side-navbar">
           <h6 className="bank-name">Visc Bank</h6>
@@ -115,7 +132,7 @@ const DashBoard = () => {
             </li>
             <li>
               <Link to="/" className="side-nav-link">
-                <img src={icon6} alt="" width={20} /> Quick transaction
+                <img src={icon6} alt="" width={20} />Sign out
               </Link>
             </li>
           </ul>
@@ -280,6 +297,14 @@ const DashBoard = () => {
           <div className="bills-div">
             <div className="pay-bills-transsaction me-5"></div>
             <div className="mobile-transaction"></div>
+          </div>
+          <div className="recent-transactions">
+            <center>
+            <h3>Recent Transactions</h3>
+            {
+              newfundHistory==""?<h1 className='text-center'></h1>
+            }
+            </center>
           </div>
         </div>
       </div>

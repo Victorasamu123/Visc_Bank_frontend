@@ -72,6 +72,10 @@ li{
     font-weight: 600;
     font-size: 20px;
 }
+.bbb{
+    width: fit-content !important;
+    height: fit-content !important;
+}
 .current-balance-div{
     width: 290px;
     height: 200px;

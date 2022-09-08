@@ -16,6 +16,7 @@ import icon11 from "../images/035-wallet-1.svg";
 import icon12 from "../images/002-bank.svg";
 import icon13 from "../images/download__1_-removebg-preview.png";
 import icon14 from "../images/download-removebg-preview (3).png";
+import icon15 from "../images/photo.png";
 const DashBoard = () => {
   const [userIdentification, setuserIdentification] = useState("");
   const [firstname, setfirstname] = useState("");
@@ -229,7 +230,14 @@ const DashBoard = () => {
             <img src={icon7} alt="" width={20} className="ms-4" />
           </div>
           <div className="username-div">
-            Welcome,{lastname} {firstname}
+            Welcome,{lastname} {firstname} <button
+            type="button"
+            className="btn btn-primary bbb"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <img src={icon15} alt="" width={20} height={20}/>
+          </button>
           </div>
           <div className="current-balance-div">
             <h6 className="current-balance-text pt-3 ms-3">Current Balance</h6>
@@ -370,6 +378,53 @@ const DashBoard = () => {
                 </div>
               ))
             )}
+          </div>
+
+         
+
+          <div
+            className="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
+                    Account's info
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <div className="fs-4">1. Surname: {firstname}</div>
+                  <div className="fs-4">2. othername: {lastname}</div>
+                  <div className="fs-4">3. Accountname: {accountnumber}</div>
+                  <div className="fs-4">3. user_id: {userIdentification}</div>
+                  <div className="fs-4">3. BVN: {Math.floor(Math.random() * 10000000000)}</div>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" className="btn btn-primary">
+                    Understood
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -20,9 +20,9 @@ const Wallets = () => {
   const [newfundHistory, setnewfundHistory] = useState([])
   const location = useLocation()
   const navigate = useNavigate()
-  const endpoint333 = "http://localhost:3500/users/wallets"
-  const endpoint344 = "http://localhost:3500/users/getwallets"
-  const endpoint355 = "http://localhost:3500/users/fundwallets"
+  const endpoint333 = "https://visc-bank.herokuapp.com/users/wallets"
+  const endpoint344 = "https://visc-bank.herokuapp.com/users/getwallets"
+  const endpoint355 = "https://visc-bank.herokuapp.com/users/fundwallets"
   useEffect(() => {
     setuserIdentification(location.state.userIdentification)
     settransferpin(location.state.transferpin)

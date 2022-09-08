@@ -6,7 +6,7 @@ const Deposits = () => {
     const [amount, setamount] = useState("");
     const [accountnumber, setaccountnumber] = useState("");
     const [accountname, setaccountname] = useState("");
-    const endpoint5="http://localhost:3500/users/deposits"
+    const endpoint5="https://visc-bank.herokuapp.com/users/deposits"
     const deposits=()=>{
         let depositsObj={amount,accountnumber,accountname};
         axios.post(endpoint5,depositsObj).then((result)=>{

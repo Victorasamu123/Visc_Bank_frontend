@@ -28,8 +28,8 @@ const DashBoard = () => {
   const [newfundHistory, setnewfundHistory] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
-  const endpoint22 = "http://localhost:3500/users/dashboard";
-  const endpoint201 = "http://localhost:3500/users/history";
+  const endpoint22 = "https://visc-bank.herokuapp.com/users/dashboard";
+  const endpoint201 = "https://visc-bank.herokuapp.com/users/history";
   useEffect(() => {
     console.log(location.state.user_id);
     setuserIdentification(location.state.user_id);

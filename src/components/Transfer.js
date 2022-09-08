@@ -19,7 +19,7 @@ const Transfer = () => {
     const [errorMessage, seterrorMessage] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
-    const endpoint101 = "http://localhost:3500/users/transfer"
+    const endpoint101 = "https://visc-bank.herokuapp.com/users/transfer"
     useEffect(() => {
       console.log(location.state)
       setuserIdentification(location.state.userIdentification)

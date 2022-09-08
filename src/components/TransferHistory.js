@@ -20,7 +20,7 @@ const TransferHistory = () => {
     const [newfundHistory, setnewfundHistory] = useState([])
     const navigate = useNavigate()
     const location = useLocation()
-    const endpoint303 = "http://localhost:3500/users/transferhistory"
+    const endpoint303 = "https://visc-bank.herokuapp.com/users/transferhistory"
     useEffect(() => {
         setuserIdentification(location.state.userIdentification)
         settransferpin(location.state.transferpin)

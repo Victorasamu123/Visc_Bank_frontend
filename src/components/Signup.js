@@ -12,7 +12,7 @@ const Signup = () => {
   const [accountnumber, setaccountnumber] = useState(Math.floor(Math.random() * 100000000000));
   const [initialbalance, setinitialbalance] = useState(0);
   const [message, setmessage] = useState("")
-  const endpoint = "http://localhost:3500/users/signup"
+  const endpoint = "https://visc-bank.herokuapp.com/users/signup"
   let navigate= useNavigate()
   const signup = () => {
     setaccountnumber(2 + Math.floor(Math.random() * 10000000000))

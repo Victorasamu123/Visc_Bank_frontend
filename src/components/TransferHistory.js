@@ -141,15 +141,15 @@ const TransferHistory = () => {
           </center>
           <div className='carrier-div'>
                 {transferHistory==""?<h1 className='text-center'>No transfer history</h1>:
-                    transferHistory.map((history,index)=>(
+                    transferHistory.map((historyss,index)=>(
                         <div className='container-fluid'>
                          <div className="row">
                             <div className="col-lg-8 col-sm-12 mx-auto">
                                 <div className='card shadow-sm'>
-                                    <span className='mt-2 ms-3 acct-nmt'>{history.receiverAcccoutName}</span>
-                                    <span className='acct-numt'>{history.receiverAccountNumber}</span>
-                                    <span className='acct-ambt'>{history.bankName}</span>
-                                    <span className='acct-amtt'>+{history.amountTransfering}</span>
+                                    <span className='mt-2 ms-3 acct-nmt'>{historyss.receiverAcccoutName}</span>
+                                    <span className='acct-numt'>{historyss.receiverAccountNumber}</span>
+                                    <span className='acct-ambt'>{historyss.bankName}</span>
+                                    <span className='acct-amtt'>+{historyss.amountTransfering}</span>
                                 </div>
                             </div>
                          </div>

@@ -38,12 +38,15 @@ const Signup = () => {
       <section className='bg-light'>
         <center>
           {
-            message !== "" ? <div className='alert alert-danger w-25'>{message}</div> : <div></div>
+            message !== "" ? <div className='alert alert-danger w-lg-25 w-sm-100'>{message}</div> : <div></div>
           }
 
         </center>
-        <h3 className='pt-5'>Signup</h3>
         <center>
+        <h1>Welcome to Visc bank</h1>
+        </center>
+        <center>
+        <h1 className='pt-5 signup'>Signup</h1>
           <div className='div-input'>
             <input type="text" placeholder='Firstname' className='input-area' onChange={(e) => setfirstname(e.target.value)} />
             <input type="text" placeholder='Lastname' className='input-area' onChange={(e) => setlastname(e.target.value)} />

@@ -14,7 +14,8 @@ import icon9 from "../images/008-credit-card.svg";
 import icon10 from "../images/020-money-bag.svg";
 import icon11 from "../images/035-wallet-1.svg";
 import icon12 from "../images/002-bank.svg";
-import icon13 from "../images/list_FILL0_wght300_GRAD0_opsz48.svg";
+import icon13 from "../images/download__1_-removebg-preview.png";
+import icon14 from "../images/download-removebg-preview (3).png";
 const DashBoard = () => {
   const [userIdentification, setuserIdentification] = useState("");
   const [firstname, setfirstname] = useState("");
@@ -305,26 +306,70 @@ const DashBoard = () => {
             </div>
           </div>
           <div className="bills-div">
-            <div className="pay-bills-transsaction me-5"></div>
-            <div className="mobile-transaction"></div>
+            <div className="pay-bills-transsaction me-5">
+              <center>
+                <div className="fund-acct00 mt-5">
+                  <center>
+                    <img src={icon13} alt="" width={80} />
+                    <br />
+                    <Link
+                      to="/history"
+                      state={{
+                        userIdentification: userIdentification,
+                        transferpin: transferpin,
+                      }}
+                      className="basic-transactions-link"
+                    ></Link>
+                  </center>
+                </div>
+                <div className="fs-3">Pay bills</div>
+              </center>
+            </div>
+            <div className="mobile-transaction">
+              <center>
+                <div className="fund-acct00 mt-5">
+                  <center>
+                    <img src={icon14} alt="" width={80} />
+                    <br />
+                    <Link
+                      to="/transfer"
+                      state={{
+                        userIdentification: userIdentification,
+                        transferpin: transferpin,
+                      }}
+                      className="basic-transactions-link"
+                    ></Link>
+                  </center>
+                </div>
+                <div className="fs-3">Mobile topup</div>
+              </center>
+            </div>
           </div>
           <div className="recent-transactions">
             <center>
               <h3>Recent Transactions</h3>
-              </center>
-              {newfundHistory == "" ? (
-                <h3 className="text-center">No history</h3>
-              ) : (
-                newfundHistory.map((his, index) => (
-                  <div className="his-con">
-                    <div className="mt-2 ms-3 das-nm">
-                      {his.accountname}
-                    </div>
-                    <div className="das-num">{his.accountnumber}</div>
-                    <div className="das-amt">+{his.amount}</div>
-                  </div>
-                ))
-              )}
+              <Link
+                to="/transfer"
+                className="liiii"
+                state={{
+                  userIdentification: userIdentification,
+                  transferpin: transferpin,
+                }}
+              >
+                See all transactions
+              </Link>
+            </center>
+            {newfundHistory == "" ? (
+              <h3 className="text-center">No history</h3>
+            ) : (
+              newfundHistory.map((his, index) => (
+                <div className="his-con">
+                  <div className="mt-2 ms-3 das-nm">{his.accountname}</div>
+                  <div className="das-num">{his.accountnumber}</div>
+                  <div className="das-amt">+{his.amount}</div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

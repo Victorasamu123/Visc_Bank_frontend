@@ -38,8 +38,8 @@ const Signin = () => {
             <div></div>
           )}
         </center>
-        <h3 className="pt-5">Signin</h3>
         <center>
+        <h1 className="pt-5 signup">Signin</h1>
           <div className="div-input">
             <input
               type="email"

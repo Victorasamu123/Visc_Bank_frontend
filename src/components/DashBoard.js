@@ -152,7 +152,7 @@ const DashBoard = () => {
         <div className="middle-body">
           <nav className="navbar navbar-expand-lg mt-5">
             <button
-              className="navbar-toggler"
+              class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
@@ -160,7 +160,7 @@ const DashBoard = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
@@ -230,14 +230,15 @@ const DashBoard = () => {
             <img src={icon7} alt="" width={20} className="ms-4" />
           </div>
           <div className="username-div">
-            Welcome,{lastname} {firstname} <button
-            type="button"
-            className="btn btn-primary bbb"
-            data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"
-          >
-            <img src={icon15} alt="" width={20} height={20}/>
-          </button>
+            Welcome,{lastname} {firstname}{" "}
+            <button
+              type="button"
+              className="btn btn-primary bbb"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <img src={icon15} alt="" width={20} height={20} />
+            </button>
           </div>
           <div className="current-balance-div">
             <h6 className="current-balance-text pt-3 ms-3">Current Balance</h6>
@@ -380,8 +381,6 @@ const DashBoard = () => {
             )}
           </div>
 
-         
-
           <div
             className="modal fade"
             id="staticBackdrop"
@@ -409,7 +408,9 @@ const DashBoard = () => {
                   <div className="fs-4">2. othername: {lastname}</div>
                   <div className="fs-4">3. Accountname: {accountnumber}</div>
                   <div className="fs-4">3. user_id: {userIdentification}</div>
-                  <div className="fs-4">3. BVN: {Math.floor(Math.random() * 10000000000)}</div>
+                  <div className="fs-4">
+                    3. BVN: {Math.floor(Math.random() * 10000000000)}
+                  </div>
                 </div>
                 <div className="modal-footer">
                   <button

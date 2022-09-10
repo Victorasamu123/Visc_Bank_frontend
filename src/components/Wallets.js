@@ -17,12 +17,13 @@ const Wallets = () => {
   const [targetamount, settargetamount] = useState("")
   const [amounttofound, setamounttofound] = useState("")
   const [fundHistory, setfundHistory] = useState([])
-  const [newfundHistory, setnewfundHistory] = useState([])
+  // const [newfundHistory, setnewfundHistory] = useState([])
   const location = useLocation()
   const navigate = useNavigate()
   const endpoint333 = "https://visc-bank.herokuapp.com/users/wallets"
   const endpoint344 = "https://visc-bank.herokuapp.com/users/getwallets"
   const endpoint355 = "https://visc-bank.herokuapp.com/users/fundwallets"
+  const endpoint366 = "http://localhost:3500/users/deletewallets"
   useEffect(() => {
     setuserIdentification(location.state.userIdentification)
     settransferpin(location.state.transferpin)
@@ -51,6 +52,12 @@ const Wallets = () => {
   const fund =()=>{
     let fundwallet = {userIdentification,amounttofound};
     axios.post(endpoint355,fundwallet).then((result)=>{
+      console.log(result)
+    })
+  }
+  const delet=()=>{
+    let deleteWallet = { userIdentification };
+    axios.post(endpoint366,deleteWallet).then((result)=>{
       console.log(result)
     })
   }
@@ -163,7 +170,7 @@ const Wallets = () => {
                     <div className='text-light'>{wallet.walletdescription}</div>
                     <div className='text-light mb-3'>Target amount:${wallet.targetamount}</div>
                     <button className='btn btn-info me-3' data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Fund wallet</button>
-                    <button className='btn btn-danger w-25'>Del</button>
+                    <button className='btn btn-danger w-25' onClick={delet}>Del</button>
                   </div>
 
                 ))

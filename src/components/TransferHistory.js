@@ -6,6 +6,7 @@ import icon3 from "../images/receipt_long_FILL0_wght200_GRAD0_opsz48.svg"
 import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
+import icon7 from "../images/menu_open_FILL0_wght200_GRAD0_opsz48.svg"
 import axios from 'axios'
 import "../styles/History2.css"
 
@@ -66,7 +67,7 @@ const TransferHistory = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <img src={icon7} alt="" width={30}/>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
@@ -133,7 +134,7 @@ const TransferHistory = () => {
           </nav>
           <div className="lolo">Visc Bank</div>
           <center>
-            <h1 className='mt-5 pt-3'>Funds Transactions History</h1>
+            <h1 className='mt-5 pt-3'>Transfer Transactions History</h1>
             <div>
                 <button className='btn btn-info me-3' onClick={goToFund}>Funds History</button>
                 <button className='btn btn-danger me-3'  onClick={getTransfer}>Transfer History</button>

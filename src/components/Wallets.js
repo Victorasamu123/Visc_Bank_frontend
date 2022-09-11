@@ -5,6 +5,7 @@ import icon3 from "../images/receipt_long_FILL0_wght200_GRAD0_opsz48.svg"
 import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
+import icon7 from "../images/menu_open_FILL0_wght200_GRAD0_opsz48.svg"
 import { useState, useEffect } from 'react'
 import axios from "axios"
 import "../styles/Wallet.css"
@@ -56,10 +57,16 @@ const Wallets = () => {
     })
   }
   const delet=()=>{
+    alert("Are u sure u want to delete this wallet")
     let deleteWallet = { userIdentification };
     axios.post(endpoint366,deleteWallet).then((result)=>{
-      console.log(result)
+      navigate("/dashboard", { state: { user_id: userIdentification } })
+      console.log("")
+    }).catch((err)=>{
+      console.log(err)
     })
+    ;
+
   }
   return (
     <>
@@ -86,7 +93,7 @@ const Wallets = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <img src={icon7} alt="" width={30}/>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
@@ -197,19 +204,19 @@ const Wallets = () => {
           </div>
         </div>
        
-        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Fund Wallet</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabel">Fund Wallet</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
               <input type="text" placeholder='enter amount' className='form-control mb-3' onChange={(e)=>setamounttofound(e.target.value)}/>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={fund}>Fund</button>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={fund}>Fund</button>
               </div>
             </div>
           </div>

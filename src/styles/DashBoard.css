@@ -190,7 +190,7 @@ li{
 @media only screen and (max-width: 600px) {
     .middle-body{
         width: 100%;
-        height: 1600px;
+        height: 900px;
         padding-top: 20px;
         overflow-x: hidden;
     }
@@ -213,6 +213,7 @@ li{
     .search-div{
         margin-top: 60px;
         margin-left: 20px;
+        display: none !important;
     }
     .username-div{
         margin-left: 75px;

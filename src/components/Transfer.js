@@ -8,6 +8,7 @@ import icon3 from "../images/receipt_long_FILL0_wght200_GRAD0_opsz48.svg"
 import icon4 from "../images/wallet_FILL0_wght200_GRAD0_opsz48.svg"
 import icon5 from "../images/payments_FILL0_wght200_GRAD0_opsz48.svg"
 import icon6 from "../images/account_balance_wallet_FILL0_wght200_GRAD0_opsz48.svg"
+import icon7 from "../images/menu_open_FILL0_wght200_GRAD0_opsz48.svg"
 const Transfer = () => {
     const [userIdentification, setuserIdentification] = useState("")
     const [receiverAcccoutName, setreceiverAcccoutName] = useState("")
@@ -69,7 +70,7 @@ const Transfer = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <img src={icon7} alt="" width={30}/>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">

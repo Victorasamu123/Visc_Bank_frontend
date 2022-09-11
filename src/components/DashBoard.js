@@ -17,6 +17,7 @@ import icon12 from "../images/002-bank.svg";
 import icon13 from "../images/download__1_-removebg-preview.png";
 import icon14 from "../images/download-removebg-preview (3).png";
 import icon15 from "../images/photo.png";
+import icon77 from "../images/menu_open_FILL0_wght200_GRAD0_opsz48.svg"
 const DashBoard = () => {
   const [userIdentification, setuserIdentification] = useState("");
   const [firstname, setfirstname] = useState("");
@@ -160,7 +161,7 @@ const DashBoard = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <img src={icon77} alt="" width={30}/>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">

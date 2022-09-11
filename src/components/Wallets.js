@@ -24,7 +24,7 @@ const Wallets = () => {
   const endpoint333 = "https://visc-bank.herokuapp.com/users/wallets"
   const endpoint344 = "https://visc-bank.herokuapp.com/users/getwallets"
   const endpoint355 = "https://visc-bank.herokuapp.com/users/fundwallets"
-  const endpoint366 = "http://localhost:3500/users/deletewallets"
+  const endpoint366 = "https://visc-bank.herokuapp.com/users/deletewallets"
   useEffect(() => {
     setuserIdentification(location.state.userIdentification)
     settransferpin(location.state.transferpin)
